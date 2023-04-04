@@ -14,6 +14,8 @@
 		2E73223C29DB92EB00B55F77 /* Top100WordsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E73223B29DB92EB00B55F77 /* Top100WordsTests.swift */; };
 		2E73224629DB92EB00B55F77 /* Top100WordsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E73224529DB92EB00B55F77 /* Top100WordsUITests.swift */; };
 		2E73224829DB92EB00B55F77 /* Top100WordsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E73224729DB92EB00B55F77 /* Top100WordsUITestsLaunchTests.swift */; };
+		2E73225529DB94D500B55F77 /* NativeLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E73225429DB94D500B55F77 /* NativeLanguageView.swift */; };
+		2E73225729DB96A500B55F77 /* LearningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E73225629DB96A500B55F77 /* LearningView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		2E73224129DB92EB00B55F77 /* Top100WordsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Top100WordsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E73224529DB92EB00B55F77 /* Top100WordsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top100WordsUITests.swift; sourceTree = "<group>"; };
 		2E73224729DB92EB00B55F77 /* Top100WordsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top100WordsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2E73225429DB94D500B55F77 /* NativeLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeLanguageView.swift; sourceTree = "<group>"; };
+		2E73225629DB96A500B55F77 /* LearningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,8 @@
 			children = (
 				2E73222A29DB92E900B55F77 /* Top100WordsApp.swift */,
 				2E73222C29DB92E900B55F77 /* ContentView.swift */,
+				2E73225629DB96A500B55F77 /* LearningView.swift */,
+				2E73225429DB94D500B55F77 /* NativeLanguageView.swift */,
 				2E73222E29DB92EB00B55F77 /* Assets.xcassets */,
 				2E73223029DB92EB00B55F77 /* Preview Content */,
 			);
@@ -257,8 +263,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E73225729DB96A500B55F77 /* LearningView.swift in Sources */,
 				2E73222D29DB92E900B55F77 /* ContentView.swift in Sources */,
 				2E73222B29DB92E900B55F77 /* Top100WordsApp.swift in Sources */,
+				2E73225529DB94D500B55F77 /* NativeLanguageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +425,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Top100Words/Preview Content\"";
+				DEVELOPMENT_TEAM = 8RXWXNS7VD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -424,6 +433,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -445,6 +455,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Top100Words/Preview Content\"";
+				DEVELOPMENT_TEAM = 8RXWXNS7VD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -452,6 +463,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
