@@ -18,7 +18,7 @@ struct ContentView: View {
         if isNativeLanguageSet {
             NavigationView {
                 VStack(spacing: 16) {
-                    Text("Welcome to Language Learner")
+                    Text("Welcome to 💯 Words")
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .padding(.top, 32)
@@ -26,26 +26,35 @@ struct ContentView: View {
                         .foregroundColor(Color(red: 48/255, green: 47/255, blue: 47/255))
                         .opacity(0.9)
                     
-                    Text("This app will help you learn the top 100 most frequently used words in your chosen language as quickly as possible. To get started, select the language you want to learn.")
+                    Text("This app will help you learn the _top 100 most frequently used words_ in your chosen language, _as quickly as possible_.")
                         .font(.headline)
                         .padding(.horizontal, 32)
-                        .multilineTextAlignment(.center)
+                        .multilineTextAlignment(.leading)
+                        .foregroundColor(Color(red: 64/255, green: 64/255, blue: 64/255))
+                        .opacity(0.8)
+                    
+                    Text("Each session is `60` seconds. You are given `2` seconds per word. If you fail to answer in `3` seconds or answer incorrectly, a new word will be shown. Words you don't recongize will be served more often, following the principles of _spaced repetition_.")
+                        .font(.headline)
+                        .padding(.horizontal, 32)
+                        .multilineTextAlignment(.leading)
                         .foregroundColor(Color(red: 64/255, green: 64/255, blue: 64/255))
                         .opacity(0.8)
                     
                     Spacer()
                     
+                    // Filter out native language from the languages array
+                    let filteredLanguages = languages.filter { $0 != UserDefaults.standard.string(forKey: "nativeLanguage") }
                     Picker(selection: $selectedLanguage, label: Text("")) {
-                        ForEach(0 ..< languages.count, id: \.self) {
-                            Text(self.languages[$0])
+                        ForEach(0 ..< filteredLanguages.count, id: \.self) {
+                            Text(filteredLanguages[$0])
                                 .font(.headline)
                         }
                     }
                     .pickerStyle(WheelPickerStyle())
                     .frame(height: 200)
                     
-                    NavigationLink(destination: LearningView(targetLanguage: languages[selectedLanguage], nativeLanguage: UserDefaults.standard.string(forKey: "nativeLanguage")!)) {
-                        Text("Start Learning \(languages[selectedLanguage])")
+                    NavigationLink(destination: LearningView(targetLanguage: filteredLanguages[selectedLanguage], nativeLanguage: UserDefaults.standard.string(forKey: "nativeLanguage")!)) {
+                        Text("Start Learning \(filteredLanguages[selectedLanguage])")
                             .font(.headline)
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity, minHeight: 44)
