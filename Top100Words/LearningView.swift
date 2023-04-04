@@ -227,12 +227,12 @@ struct LearningView: View {
             Spacer()
 
             Text("Remaining guesses: \(remainingGuesses)")
-                .font(.footnote)
+                .font(.subheadline)
                 .padding(.top)
 
             Text("Time remaining: \(timeRemaining)s")
-                .font(.footnote)
-                .padding(.top)
+                .font(.subheadline)
+                .padding(.top, 10)
                 .onAppear {
                     startTimer()
                     DispatchQueue.main.async {
