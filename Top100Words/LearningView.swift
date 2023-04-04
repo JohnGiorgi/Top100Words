@@ -193,6 +193,9 @@ struct LearningView: View {
     
     var body: some View {
         VStack {
+
+            Spacer()
+
             Text("Translate the following word:")
                 .font(.title2)
                 .fontWeight(.semibold)
@@ -203,28 +206,25 @@ struct LearningView: View {
                 .padding(.bottom)
 
             VStack {
-                ForEach(0..<2) { rowIndex in
-                    HStack {
-                        ForEach(0..<2) { colIndex in
-                            let index = rowIndex * 2 + colIndex
-                            Button(action: {
-                                if !isShowingAnswer && remainingGuesses > 0 {
-                                    checkAnswer(choices[index])
-                                }
-                            }) {
-                                Text(choices[index])
-                                    .padding()
-                                    .frame(maxWidth: .infinity)
-                                    .background(isCorrect[index] ? Color.green : (isIncorrect[index] ? Color.red : Color.primary.opacity(0.1)))
-                                    .foregroundColor(.primary)
-                                    .cornerRadius(10)
-                            }
-                            .padding(.horizontal, 10)
+                ForEach(choices.indices, id: \.self) { index in
+                    Button(action: {
+                        if !isShowingAnswer && remainingGuesses > 0 {
+                            checkAnswer(choices[index])
                         }
+                    }) {
+                        Text(choices[index])
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(isCorrect[index] ? Color.green : (isIncorrect[index] ? Color.red : Color.primary.opacity(0.1)))
+                            .foregroundColor(.primary)
+                            .cornerRadius(10)
                     }
-                    .padding(.bottom, 10)
+                    .padding(.horizontal, 10)
                 }
             }
+            .padding(.bottom, 10)
+            
+            Spacer()
 
             Text("Remaining guesses: \(remainingGuesses)")
                 .font(.footnote)
